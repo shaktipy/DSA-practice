@@ -3,6 +3,7 @@ Problem: Maximum Depth of Binary Tree
 Platform: LeetCode
 Problem No: 104
 Difficulty: Easy
+Topics: Tree, Depth-First Search, Breadth-First Search, Binary Tree
 
 ------------------------------------------------
 Approach:
