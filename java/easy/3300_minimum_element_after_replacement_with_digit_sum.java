@@ -69,14 +69,7 @@ class Solution {
             nums[i] = sum;
         }
 
-        int minVal = Integer.MAX_VALUE;
-
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] < minVal) {
-                minVal = nums[i];
-            }
-        }
-
-        return minVal;
+          Arrays.sort(nums);
+        return nums[0];
     }
 }
