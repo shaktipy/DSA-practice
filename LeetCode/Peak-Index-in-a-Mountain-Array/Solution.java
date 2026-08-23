@@ -1,16 +1,15 @@
-    def peakIndexInMountainArray(self, arr: List[int]) -> int:
-        n = len(arr)
-    l = 1
-    r = n - 2
-    while l <= r:
-        m = (l + r) // 2
-        if arr[m-1] < arr[m] > arr[m+1]:
-            return m
-        elif arr[m-1] > arr[m]: 
-            # arr[m-1] > arr[m] > arr[m+1] ==> search left, since we are in right region
-            r = m - 1
-        else: 
-            # arr[m-1] < arr[m] < arr[m+1] ==> search right, since we are in left region
-            l = m + 1 
-        
-    return -1
+1class Solution {
+2    public int peakIndexInMountainArray(int[] arr) {
+3        int low=0;
+4        int high=arr.length-1;
+5        while(low<high){
+6            int mid=low+(high-low)/2;
+7            if(arr[mid]>arr[mid+1]){
+8                high=mid;
+9            } else{
+10                low=mid+1;
+11            }
+12        }
+13        return low;
+14    }
+15}
