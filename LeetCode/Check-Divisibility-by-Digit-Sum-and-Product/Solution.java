@@ -1,17 +1,19 @@
-class Solution {
-public:
-    static inline int dp[1001][2] = {{0, 1}};
-
-    bool init = [] {
-        for (int i = 1; i <= 1000; i++) {
-            dp[i][0] = dp[i / 10][0] + i % 10;
-            dp[i][1] = dp[i / 10][1] * (i % 10);
-        }
-        return 0;
-    }();
-
-    bool checkDivisibility(int n) {
-        auto [a, b] = div(n, 1000);
-        return n % (dp[a][0] + dp[b][0] + dp[a][1] * dp[b][1]) == 0;
-    }
-};
+1class Solution {
+2    public boolean checkDivisibility(int n) {
+3        int sum = 0;
+4        int pro = 1;
+5        int a;
+6        int res = n;
+7        while(n > 0){
+8            a = n % 10;
+9            sum += a;
+10            pro *= a;
+11            n /= 10;
+12        }
+13        if(res % (sum + pro) == 0){
+14            return true;
+15        }else{
+16            return false;
+17        }
+18    }
+19}
